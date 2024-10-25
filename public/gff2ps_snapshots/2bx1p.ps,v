@@ -1,0 +1,901 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.2
+date	2005.10.04.10.26.06;	author gmaster;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2005.10.04.10.26.06;	author gmaster;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Fixing www1 url
+@
+text
+@%!PS-Adobe-3.0
+%%Title: GFF2PS - Genomic Annotation Plots
+%%Creator: gff2ps
+%%Version: v0.92b
+%%CreationDate: 1999/12/14 19:35:21
+%%For: jabril
+%%Pages: (atend)
+%%Orientation: Portrait
+%%BoundingBox: 0 0 595 842
+%%EndComments
+%
+%    Author : Josep Francesc ABRIL FERRANDO
+%    e-mail :        jabril@@imim.es
+%
+% ------------------------------------------------------------------------
+%                     PostScript Output from gff2ps
+% ------------------------------------------------------------------------
+% 
+%    $Id: 2bx1p.ps,v 1.1 2005/10/04 10:26:06 gmaster Exp gmaster $
+% 
+% 
+%        Converting GFF files to PostScript plots.
+%
+%        Copyright (C) 1999 - Josep Francesc ABRIL FERRANDO  
+%                                    Roderic GUIGO SERRA       
+%
+%    This program is free software; you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation; either version 2 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program; if not, write to the Free Software
+%    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+%
+% ------------------------------------------------------------------------
+%
+%%BeginProlog
+%
+%%BeginProcSet: ShortNames 1.0 0
+/tflg false def % test flag
+/bdf { bind def } bind def
+/xdf { exch def } bdf
+/cm { 28.35 mul } bdf
+/in { 72    mul } bdf
+%%EndProcSet:   ShortNames 1.0 0
+%
+%%BeginProcSet: Constants 1.0 0
+% Printing Offset
+/VUpOS 0.25 cm def  % offset defines non printable
+/VDnOS 0.25 cm def  % paper area for pages (printer outlimits).
+/HLtOS 0.25 cm def
+/HRtOS 0.25 cm def
+% Fixed Color Variables (CMYK)
+/colordict 95 dict def colordict begin % 67 colors + 28 definitions
+/black                { 0.00 0.00 0.00 1.00 } def
+/verydarkgrey         { 0.00 0.00 0.00 0.80 } def
+/darkgrey             { 0.00 0.00 0.00 0.60 } def
+/grey                 { 0.00 0.00 0.00 0.40 } def
+/lightgrey            { 0.00 0.00 0.00 0.20 } def
+/verylightgrey        { 0.00 0.00 0.00 0.10 } def
+/white                { 0.00 0.00 0.00 0.00 } def
+/verydarkmagenta      { 0.00 1.00 0.00 0.30 } def
+/darkmagenta          { 0.00 0.80 0.00 0.05 } def
+/magenta              { 0.00 0.60 0.00 0.00 } def
+/lightmagenta         { 0.00 0.40 0.00 0.00 } def
+/verylightmagenta     { 0.00 0.20 0.00 0.00 } def
+/verydarkviolet       { 0.45 0.85 0.00 0.00 } def
+/darkviolet           { 0.30 0.65 0.00 0.00 } def
+/violet               { 0.22 0.55 0.00 0.00 } def
+/lightviolet          { 0.15 0.40 0.00 0.00 } def
+/verylightviolet      { 0.10 0.20 0.00 0.00 } def
+/verydarkblue         { 1.00 1.00 0.00 0.20 } def
+/darkblue             { 0.90 0.90 0.00 0.00 } def
+/blue                 { 0.75 0.75 0.00 0.00 } def
+/lightblue            { 0.50 0.50 0.00 0.00 } def
+/verylightblue        { 0.30 0.30 0.00 0.00 } def
+/verydarkskyblue      { 0.90 0.50 0.00 0.15 } def
+/darkskyblue          { 0.75 0.45 0.00 0.00 } def
+/skyblue              { 0.60 0.38 0.00 0.00 } def
+/lightskyblue         { 0.45 0.25 0.00 0.00 } def
+/verylightskyblue     { 0.30 0.15 0.00 0.00 } def
+/verydarkcyan         { 1.00 0.00 0.00 0.10 } def
+/darkcyan             { 0.80 0.00 0.00 0.00 } def
+/cyan                 { 0.60 0.00 0.00 0.00 } def
+/lightcyan            { 0.40 0.00 0.00 0.00 } def
+/verylightcyan        { 0.20 0.00 0.00 0.00 } def
+/verydarkseagreen     { 0.75 0.00 0.45 0.00 } def
+/darkseagreen         { 0.62 0.00 0.38 0.00 } def
+/seagreen             { 0.50 0.00 0.30 0.00 } def
+/lightseagreen        { 0.38 0.00 0.22 0.00 } def
+/verylightseagreen    { 0.25 0.00 0.15 0.00 } def
+/verydarkgreen        { 1.00 0.00 1.00 0.25 } def
+/darkgreen            { 0.80 0.00 0.80 0.00 } def
+/green                { 0.60 0.00 0.60 0.00 } def
+/lightgreen           { 0.40 0.00 0.40 0.00 } def
+/verylightgreen       { 0.20 0.00 0.20 0.00 } def
+/verydarklimegreen    { 0.50 0.00 1.00 0.10 } def
+/darklimegreen        { 0.40 0.00 0.95 0.00 } def
+/limegreen            { 0.30 0.00 0.80 0.00 } def
+/lightlimegreen       { 0.20 0.00 0.65 0.00 } def
+/verylightlimegreen   { 0.10 0.00 0.50 0.00 } def
+/verydarkyellow       { 0.00 0.00 1.00 0.25 } def
+/darkyellow           { 0.00 0.00 1.00 0.10 } def
+/yellow               { 0.00 0.00 1.00 0.00 } def
+/lightyellow          { 0.00 0.00 0.50 0.00 } def
+/verylightyellow      { 0.00 0.00 0.25 0.00 } def
+/verydarkorange       { 0.00 0.50 0.80 0.10 } def
+/darkorange           { 0.00 0.40 0.80 0.00 } def
+/orange               { 0.00 0.30 0.80 0.00 } def
+/lightorange          { 0.00 0.20 0.75 0.00 } def
+/verylightorange      { 0.00 0.15 0.70 0.00 } def
+/verydarkred          { 0.00 1.00 1.00 0.15 } def
+/darkred              { 0.00 0.80 0.80 0.00 } def
+/red                  { 0.00 0.60 0.60 0.00 } def
+/lightred             { 0.00 0.40 0.40 0.00 } def
+/verylightred         { 0.00 0.20 0.20 0.00 } def
+/verydarkbrown        { 0.35 0.85 1.00 0.40 } def
+/darkbrown            { 0.30 0.70 1.00 0.35 } def
+/brown                { 0.25 0.75 1.00 0.25 } def
+/lightbrown           { 0.20 0.60 0.70 0.15 } def
+/verylightbrown       { 0.15 0.45 0.55 0.00 } def
+end % colordict
+%  Paper Sizes  (in points)
+/pagedict 34 dict def pagedict begin % 32+2 sizes defined
+/pg10x14        {  720 1008 } def
+/pga0           { 2384 3370 } def
+/pga1           { 1684 2384 } def
+/pga10          {   73  105 } def
+/pga2           { 1190 1684 } def
+/pga3           {  842 1190 } def
+/pga4           {  595  842 } def
+/pga5           {  420  595 } def
+/pga6           {  297  420 } def
+/pga7           {  210  297 } def
+/pga8           {  148  210 } def
+/pga9           {  105  148 } def
+/pgb0           { 2920 4127 } def
+/pgb1           { 2064 2920 } def
+/pgb10          {   91  127 } def
+/pgb2           { 1460 2064 } def
+/pgb3           { 1032 1460 } def
+/pgb4           {  729 1032 } def
+/pgb5           {  516  729 } def
+/pgb6           {  363  516 } def
+/pgb7           {  258  363 } def
+/pgb8           {  181  258 } def
+/pgb9           {  127  181 } def
+/pgexecutive    {  540  720 } def
+/pgfolio        {  612  936 } def
+/pgledger       { 1224  792 } def
+/pglegal        {  612 1008 } def
+/pgletter       {  612  792 } def
+/pgquarto       {  610  780 } def
+/pgstatement    {  396  612 } def
+/pgtabloid      {  792 1224 } def
+/pguserdefined  {  595 2384 } def
+end % pagedict
+%%EndProcSet:   Constants 1.0 0
+% BG & FG colors
+/BGcolor { colordict begin verylightcyan end } def /bgcolor { BGcolor } bdf
+/FGcolor { colordict begin black end } def /fgcolor { FGcolor } bdf
+/frmN { colordict begin orange end } def
+/frm0 { colordict begin blue end } def
+/frm1 { colordict begin red end } def
+/frm2 { colordict begin green end } def
+% page orientation flag
+/flglscape false def
+%% page size in points used for plot % pgA4 == 595  842
+/Dpage { pagedict begin pga4 flglscape { exch } if end } bdf
+% margins (1 cm) (Up Down Left Right - margins are XY independent)
+/UpM 1 cm def
+/DnM 1 cm def
+/LtM 1 cm def
+/RtM 0.5 cm def
+%
+/TkMrkW 0.25 cm def % Defining tickmark-width.
+/BlckSp 0.25 cm def % Defining blocks-spacing
+%
+/SeqLen 10000 def
+/XNucOffSet 0 def
+/NPages 1 def
+/NBlck 2 def
+/MaxNuclPage 5000 def
+/FlgBkBx false def
+/FlgOS true def
+/FlgIS false def
+/MaxTick 1000 def
+/MinTick 100 def
+%
+/tracksize 1 cm def
+/spcrsize  0.25 cm def
+/LnTot  219.713 def
+/LnFwd 219.713 def
+/LnRvs 0 def
+/LnBth 0 def
+/vectoffset 10 def
+%
+/XLftLbl 2.5 cm def
+/FLftLbl false def
+/XRgtLbl 2.5 cm def
+/FRgtLbl true def
+%
+/XOriTitl 0 cm def
+/YOriTitl 0 cm def
+/YSTitl 1 cm def
+/flgcrd false def % credits flag
+/FlgTitl true def
+/headerdict 24 dict def headerdict begin
+ /ShwTBx true def
+ /ShwTt true def
+ /Title (GFF2PS - Genomic Annotation Plots) def
+ /ShwST true def
+ /SubTitle (Some examples of different formats for the same input file.) def
+ /ShwDate false def
+ /Sdate (1999/12/14) def
+ /ShwTime false def
+ /Stime (19:35:21) def
+ /Shwp_num true def
+end%
+%
+%%EndProcSet:   Setting_Vars 1.0 0
+%
+%%BeginProcSet: Page_Layout 1.0 0
+% checking if margins are within the defined offset
+flglscape {
+ UpM HLtOS lt { /UpM HLtOS def } if % Checking margins for flglscape mode
+ DnM HRtOS lt { /DnM HRtOS def } if
+ LtM VDnOS lt { /LtM VDnOS def } if
+ RtM VUpOS lt { /RtM VUpOS def } if
+ } {
+  UpM VUpOS lt { /UpM VUpOS def } if % Checking margins for portrait mode
+  DnM VDnOS lt { /DnM VDnOS def } if
+  LtM HLtOS lt { /LtM HLtOS def } if
+  RtM HRtOS lt { /RtM HRtOS def } if
+  } ifelse
+% defining pagelimits and X - Y scales (Xlim Ylim)
+/pglim { Dpage pop LtM RtM add sub Dpage exch pop UpM DnM add sub } def
+% Defining starting point on page.
+/XORI LtM def
+/YORI UpM def
+% Defining page-elements layout.
+/XSTitl pglim pop XOriTitl 2 mul sub def
+/XSBlck pglim pop def
+/FSF 2.5 def % Point size for Credits for A4
+/CSF { pagedict begin pga4 pop end Dpage pop exch div mul } bdf
+/XOriBlck 0 def
+/XSPlot { XSBlck FLftLbl { XLftLbl sub } if FRgtLbl { XRgtLbl sub } if } def
+/XOriPlot { XOriBlck FLftLbl { XLftLbl add } if } def
+/Xscale XSPlot MaxNuclPage div def
+/YOriBlck { FlgTitl { YOriTitl YSTitl add BlckSp add } { 0 } ifelse } def
+NBlck 0 eq {
+  /is1tck false def
+  /is2tck false def
+  /YSBlck { pglim exch pop flgcrd { FSF CSF 2 mul sub } if FlgTitl { YOriTitl YSTitl BlckSp add add sub } if } def
+  /YS2Blck { pglim exch pop flgcrd { FSF CSF 2 mul sub } if FlgTitl { YOriTitl YSTitl BlckSp add add sub } if FlgOS { TkMrkW 4 mul sub } if FlgIS { is1tck { TkMrkW 2 mul is2tck { TkMrkW 2 mul add } if sub } if } if } def
+  /YSFwd LnFwd def
+  /YSBth LnBth def
+  /YSRvs LnRvs def
+% /YSTck LnTck def
+ } {
+  /is1tck LnFwd 0 gt LnBth 0 gt and LnFwd 0 gt LnRvs 0 gt and or LnBth 0 gt LnRvs 0 gt and or def
+  /is2tck LnBth 0 gt LnFwd 0 gt LnRvs 0 gt and and def % true if must plot two tickmark lines
+  /YSBlck { pglim exch pop flgcrd { FSF CSF 2 mul sub } if FlgTitl { YOriTitl YSTitl add NBlck } { 0 NBlck 1 sub } ifelse BlckSp mul add sub NBlck div } def
+  /YS2Blck { pglim exch pop flgcrd { FSF CSF 2 mul sub } if FlgTitl { YOriTitl YSTitl add NBlck } { 0 NBlck 1 sub } ifelse BlckSp mul add sub NBlck div FlgOS { TkMrkW 4 mul sub } if FlgIS { is1tck { TkMrkW 2 mul is2tck { TkMrkW 2 mul add } if sub } if } if } def
+  /YSLine YS2Blck LnTot div def
+  /tracksize tracksize YSLine mul def
+  /spcrsize spcrsize YSLine mul def
+  /YSFwd LnFwd YSLine mul def
+  /YSBth LnBth YSLine mul def
+  /YSRvs LnRvs YSLine mul def
+% /YSTck LnTck YSLine mul def
+} ifelse
+%%EndProcSet:   Page_Layout 1.0 0
+%
+%%BeginProcSet: functions 1.0 0
+/msg { print (\n) print flush } bdf
+/F { scale } bdf
+/T { translate } bdf
+/S { gsave } bdf
+/R { grestore } bdf
+/m { moveto } bdf
+/rm { rmoveto } bdf
+/l { lineto } bdf
+/rl { rlineto } bdf
+/K { stroke } bdf
+/scmyk { setcmykcolor } bdf
+/slw { setlinewidth } bdf
+/min { 2 copy gt { exch } if pop } bdf 
+/max { 2 copy lt { exch } if pop } bdf
+/Xscm { Xscale mul } bdf /Xscme { Xscm exch } bdf
+/ChkLimits { 3 copy pop 5 2 roll dup dup 5 1 roll 3 1 roll lt 3 1 roll gt or { pop false } { true } ifelse } def 
+/nucdif { 2 copy exch sub } bdf
+%%EndProcSet:   functions 1.0 0
+%
+%%BeginProcSet: text_functions 1.0 0
+/sfont { findfont exch scalefont setfont } bdf
+/chrh { S newpath 0 0 m false charpath flattenpath pathbbox exch pop 3 -1 roll pop R } bdf
+/strh { 2 dict begin /lly 0.0 def /ury 0.0 def { ( ) dup 0 4 -1 roll put chrh dup ury gt { /ury xdf } { pop } ifelse dup lly lt { /lly xdf } { pop } ifelse } forall ury end } bdf
+/stringheight  { S newpath 0 0 m (0) false charpath flattenpath pathbbox exch pop exch sub exch pop 0.95 mul R } bdf
+/ct { S 0 T sfont scmyk dup stringwidth pop 2 div neg stringheight 2 div neg m show R } bdf
+% X Y angle string valign halign fnt color ttxt
+ % valign : tv (top)  cv (middle) bv (bottom)
+ % halign : lh (left) ch (center) rh (right)
+/ttxt { S scmyk sfont 8 dict begin /h xdf /v xdf /lbl xdf /angle xdf /y xdf /x xdf /hs lbl stringwidth pop neg def /vs lbl strh neg def x y T angle rotate h (rh) eq { hs } { h (ch) eq { hs 2 div } { 0 } ifelse } ifelse v (tv) eq { vs } { v (cv) eq { vs 2 div } { 0 } ifelse } ifelse m lbl show end R } bdf
+%%EndProcSet:   text_functions 1.0 0
+%
+%%BeginProcSet: painting_functions 1.0 0
+/dotted      { [ 1 ] 0 setdash } def
+/longdotted  { [ 1 ] 5 setdash } def
+/shortdashed { [ 10 ] 10 setdash } def
+/longdashed  { [ 20 ] 10 setdash } def
+/bbox { 4 copy 3 1 roll exch 6 2 roll 8 -2 roll m l l l closepath } bdf
+/scolor { colordict exch get exec scmyk } bdf
+%
+colordict begin % adding definitions and functions
+ /lup { /ku xdf /yu xdf /mu xdf /cu xdf } bdf
+ /lmd { /km xdf /ym xdf /mm xdf /cnm xdf } bdf
+ /ldn { /kd xdf /yd xdf /md xdf /cd xdf } bdf
+ /load2col { lup ldn /dk ku kd sub def /dy yu yd sub def /dm mu md sub def /dc cu cd sub def } bdf
+ /load3col { lup lmd ldn /uk ku km sub def /uy yu ym sub def /um mu mm sub def /uc cu cnm sub def /dk km kd sub def /dy ym yd sub def /dm mm md sub def /dc cnm cd sub def } bdf
+ /col2 { 2 dict begin /p xdf /pcd { p mul add } bdf cd dc pcd md dm pcd yd dy pcd kd dk pcd scmyk end } bdf
+ /col3 { 3 dict begin /p xdf /pcd { p 2 mul mul add } bdf /pcu { p 0.5 sub 2 mul mul add } bdf p 0.5 le { cd dc pcd md dm pcd yd dy pcd kd dk pcd } { cnm uc pcu mm um pcu ym uy pcu km uk pcu } ifelse scmyk end } bdf
+ /rainbow { 1 dict begin /p xdf p 0.1 le { p 0.2 div 0.5 add 1 0 0 scmyk } { p 0.4 le { 1 1 p 0.1 sub 0.3 div sub 0 0 scmyk } { p 0.6 le { 1 0 p 0.4 sub 0.2 div 0 scmyk } { p 0.8 le { 1 p 0.6 sub 0.2 div sub 0 1 0  scmyk } { 0 p 0.8 sub 0.2 div 1 0 scmyk } ifelse } ifelse } ifelse } ifelse end } bdf
+end % colordict
+%%EndProcSet:   painting_functions 1.0 0
+%
+%%BeginProcSet: header_functions 1.0 0
+%
+headerdict begin
+ /ttfsz { YSTitl 0.50 mul } def
+ /stfsz { YSTitl 0.25 mul } def
+ /xtfsz { YSTitl 0.25 mul } def
+ /sepsz { YSTitl 0.125 mul } def
+ % /xtpsz { xtfsz 2 div } def
+ /ttfnt { ttfsz /Helvetica-Bold } def
+ /stfnt { stfsz /Helvetica      } def
+ /dtfnt { xtfsz /Times-Roman    } def
+ /tmfnt { xtfsz /Times-Roman    } def
+ /pgfnt { xtfsz /Times-Roman    } def
+ /ttlong { S ttfnt sfont Title stringwidth pop stfnt sfont SubTitle stringwidth pop R 2 copy gt { pop } { exch pop } ifelse 2 div } bdf
+ /Header { S XOriTitl YOriTitl YSTitl add T 1 -1 F ShwTBx { S 0 0 XSTitl YSTitl bbox fgcolor scmyk K R } if ShwTt Title () ne and { sepsz ttlong add YSTitl sepsz sub 0 Title (tv) (ch) ttfnt fgcolor ttxt } if ShwST SubTitle () ne and { sepsz ttlong add sepsz 0 SubTitle (bv) (ch) stfnt fgcolor ttxt } if ShwDate { XSTitl 4.5 sub xtfsz 0 Sdate (tv) (rh) tmfnt fgcolor ttxt } if ShwTime { XSTitl 4.5 sub YSTitl 2 div 0 Stime (cv) (rh) dtfnt fgcolor ttxt } if Shwp_num { XSTitl 4.5 sub YSTitl xtfsz sub 0 PageNumber (bv) (rh) pgfnt fgcolor ttxt } if R } bdf
+end
+%
+/s_credits { S 1 dict begin /fs_cd FSF CSF def pglim FSF 0.52 mul CSF sub T 1 -1 F 0 0 0 (This plot has been obtained using gff2ps. The most recent version of gff2ps is freely available at \042http:\/\/genome.crg.es/\176jabril/\042. Copyright      1999 by Josep F. Abril & Roderic Guigo) (cv) (rh) fs_cd /Times-Roman fgcolor ttxt S fs_cd /Times-Roman sfont (   1999 by Josep F. Abril & Roderic Guigo) stringwidth pop neg R 0 0 (\343) (cv) (ch) fs_cd /Symbol fgcolor ttxt end R } bdf
+%
+%%EndProcSet:   header_functions 1.0 0
+%
+%%BeginProcSet: tickmarks 1.4 0
+% Rule.ps ---> rules and scales
+/tmdct 22 dict def tmdct begin
+ /ShowGrid 0 def % 0 - none : 1 - MinTicks : 2 - MaxTicks : 3 - Both
+ /Gridup true def /Griddn true def /flgup true def
+ /TkMrkHW TkMrkW  2 div def
+ /TkMrkDW TkMrkW 10 div def
+ /TkFont { TkMrkHW /Helvetica } def
+ /MaxWidthT { S MaxNuclPage 10 string cvs TkFont sfont stringwidth pop 2 mul R } bdf
+ /CheckCloser { 3 copy pop MaxWidthT sub 3 1 roll MaxWidthT add 3 1 roll dup dup 5 1 roll 3 1 roll lt 3 1 roll gt or 4 1 roll 3 copy dup 3 1 roll ne 3 1 roll ne and 5 -1 roll and { pop false } { true } ifelse } bdf
+ /ctextick { S TkFont sfont dup stringheight 2 div exch stringwidth pop 2 Xscm div neg Xscm exch 2 copy neg T 2 mul exch 2 mul neg exch S 0 0 bbox bgcolor scmyk S tflg { fgcolor scmyk } if 2 slw K R fill R 0 0 m fgcolor scmyk show R } bdf
+ /bltextick { S TkFont sfont dup stringwidth pop 2 Xscm div neg Xscm TkMrkHW 2 copy flgup { TkMrkDW add T } { 2 mul T 1 -1 F } ifelse exch 2 mul neg exch S 0 0 bbox bgcolor scmyk S tflg { fgcolor scmyk } if 2 slw K R fill R 0 0 m fgcolor scmyk show R } bdf
+ /tonormtick { 0 eq { dup dup 0 ne { MinTick mod } if sub exch dup dup 0 ne { MinTick mod } if sub exch } { dup dup 0 ne { MaxTick mod } if sub exch dup dup 0 ne { MaxTick mod } if sub exch } ifelse } bdf
+ /Mkg { 0 0 m l fgcolor scmyk dotted K } bdf
+ /MkVGrid { S slw Gridup flgup not { not } if { 0 up Mkg } if Griddn flgup not { not } if { 0 down neg Mkg } if  R } bdf
+ /MkAtick { slw 0 TkMrkHW neg m 0 TkMrkHW l fgcolor scmyk K } bdf
+ /MkBtick { S dup Xscm 0 T ShowGrid 2 eq ShowGrid 3 eq or { 0.25 MkVGrid } if 1 MkAtick CheckCloser { 10 string cvs ctextick } if R } bdf
+ /MkCtick { slw 0 0 m 0 TkMrkHW 3 -1 roll { TkMrkDW sub } if l fgcolor scmyk K } bdf
+ /MkDtick { S dup Xscm 0 T CheckCloser { 10 string cvs bltextick } if ShowGrid 2 eq ShowGrid 3 eq or { 0.25 MkVGrid } if false 1 MkCtick R } bdf
+ /baseline { S Xscm TkMrkDW m Xscm TkMrkDW l TkMrkDW 2 mul slw fgcolor scmyk K R } bdf
+ /r { /Gridup true def /Griddn true def /flgup true def 0 exch T S 0 T 1 -1 F 5 { 2 copy } repeat pop neg Xscm 0 T 0 tonormtick MinTick exch { ChkLimits { S Xscm 0 T 0.25 MkAtick ShowGrid 1 eq ShowGrid 3 eq or { 0 MkVGrid } if R } if } for 1 tonormtick MaxTick exch { ChkLimits { MkBtick } if } for 2 { dup dup 0 ne { MaxTick mod } if 0 ne { MkBtick } { pop } ifelse } repeat R } bdf
+ /x { 6 { 2 copy } repeat pop neg Xscm 0 T baseline 0 tonormtick MinTick exch { ChkLimits { S Xscm 0 T true 0.25 MkCtick ShowGrid 1 eq ShowGrid 3 eq or { 0 MkVGrid } if R } if } for 1 tonormtick MaxTick exch { ChkLimits { MkDtick } if } for 2 { dup dup 0 ne { MaxTick mod } if 0 ne { MkDtick } { pop } ifelse } repeat } bdf 
+ /s { /Gridup false def /Griddn true def /flgup true def 0 exch TkMrkW add T S 0 T 1 -1 F x R } bdf
+ /z { /Gridup true def /Griddn false def /flgup false def 0 exch T S 0 T 1 1 F x R } bdf
+end % tmdct
+%%EndProcSet:   tickmarks 1.4 0
+%
+%%BeginProcSet: objects 1.1 0
+/shpdct 200 dict def shpdct begin
+ /mtrx matrix def
+ /LY { Yscl 0.45 mul } bdf
+%
+% X Y angle string valign halign fnt color ttxt
+% functions for vectors-like data-sets
+ /rt { tracksize strnd (.) eq { 0.975 mul } { 0.50 mul } ifelse } bdf
+ /vst 250 string def
+ % /clrproc colordict begin white black load2col /col2 load end def
+ /clrselc { cvx exec dup 2 eq { pop load2col /clrproc /col2 load def } { dup 3 eq { pop load3col /clrproc /col3 load def } { dup 0 eq { pop white black load2col /clrproc /col2 load def } { dup 4 eq { 5 { pop } repeat /clrproc /rainbow load def } { 1 eq { white 8 4 roll load2col /clrproc /col2 load def } if } ifelse } ifelse } ifelse } ifelse } bdf % no end for closing dict because grdct must be closed by calling function
+% /ov { S shpdct begin exch Xscm exch T { currentfile token { exec } { exit } ifelse } loop end R } bdf
+% /v { S Xscm dup vtoffset sub exch vtoffset add 0 m 0 l clrproc exec K R } bdf
+ /v { clrproc v_s 0 m v_e 0 l K /v_s v_s vstp add def /v_e v_e vstp add def } bdf
+ /GetVtVar { /v_cmod xdf /v_ori xdf /v_end xdf /sc_ori xdf sc_ori v_ori gt { /v_ori sc_ori def } if colordict begin v_cmod clrselc rt slw } bdf
+ % score vector
+% /vt { S /VStp xdf /VWdw xdf /vstp VWdw Xscm def /v_s 0 def /v_e vstp def GetVtVar S v_ori VWdw gt { v_ori VStp 2 div sub Xscm 0 T } { VWdw 2 div VStp 2 div sub Xscm 0 T } ifelse { currentfile vst readline pop { { token { cvx exec v } { exit } ifelse } loop } stopped { exit } if } loop (Vector Loop finished...) msg R end R } bdf
+ /vt { S /VStp xdf /VWdw xdf /vstp VStp Xscm def GetVtVar v_ori VWdw ge { v_ori VStp 2 div sub Xscm } { v_ori VWdw v_ori sub 2 div VStp 2 div sub add Xscm } ifelse dup /v_s xdf /v_e exch vstp add def S { currentfile vst readline pop { { token { cvx exec v } { exit } ifelse } loop } stopped { exit } if } loop R end R } bdf % (Score-Vector Loop finished...) msg 
+ % position-score vector
+ /vp { S GetVtVar v_ori 0 T { currentfile } bind loop (Position-Vector Loop finished...) msg R } bdf
+ % segment-score vector
+ /vg { S (Segment-Vector Loop finished...) msg R } bdf  
+ % string vector
+ /vw { S (String-Vector Loop finished...) msg R } bdf  
+%
+% Functions for Shapes......
+ /getfrcol { dup (.) eq { pop frmN } { dup 0 eq { pop frm0 } { dup 1 eq { pop frm1 } { 2 eq { frm2 } if } ifelse } ifelse } ifelse } bdf
+ /cmdln { 0 m sqdif 2 div neg 0 rl scmyk K } bdf % S - R removed to allow frame-remainder fill mode to work.
+ /lnfill { S Yscl slw sqdif cmdln sqdif 2 div cmdln R } bdf
+ /frmfill { frm getfrcol rmd getfrcol lnfill } bdf
+ /rnbfill { 1 dict begin S /incr sqdif 100 div def 0 incr sqdif { dup dup incr add 0 exch 0 m l dup 0 gt { sqdif div } if rainbow Yscl slw K } for R end } bdf 
+ /setcolmod { cmod cvx exec dup 1 eq { pop scmyk fill } { dup 2 eq { pop lnfill } { dup 5 eq { 5 { pop } repeat frmfill } { dup 4 eq { 5 { pop } repeat rnbfill } { pop } ifelse } ifelse } ifelse } ifelse } bdf
+% /ShFsz { TkMrkW dup GpFsz 2 div gt { pop GpFsz 4 div } { 2 div } ifelse } bdf
+ /ShFsz { GpFsz 2 div } bdf
+ /ShFont { ShFsz /Helvetica } bdf 
+ /postk { S 0 0 m 0 LY 0.65 mul rl longdotted fgcolor scmyk 0.125 slw K R } bdf
+ /shwpos { S Flgspos { seqori LY ScV 0 eq { 0.65 mul neg } if T sqend sqdif sqori 0 2 { S 0 T postk 10 string cvs 0 0 S strnd (-) eq { 1 -1 F 45 } { -45 } ifelse 4 -1 roll strnd (-) eq { (bv) } { (tv) } ifelse (lh) ShFont fgcolor ttxt R R } repeat } if R } bdf
+% *V align:  0 center : 1 baseline : -1 reverse
+% /frs { S strnd (-) eq { -1 1 F } if FtV 0 eq { 0 LY sc mul 2 div neg T } { FtV -1 eq { 1 -1 F } if } ifelse colordict begin 1 dict begin /svmtrix mtrx currentmatrix def { p_s cvx exec scmyk } stopped not { S 0.25 slw fgcolor scmyk K R clip setcolmod } if newpath end end R } bdf % (Filling clipping path...) msg 
+ /frs { S strnd (-) eq { -1 1 F } if FtV 0 eq { 0 LY sc mul 2 div neg T } if colordict begin p_s cvx exec newpath end R } bdf % (Filling clipping path...) msg 
+ /GetVar { /ftlbl xdf /Flgspos xdf /FtV xdf /p_s xdf /cmod xdf /sc xdf /rmd xdf /frm xdf CKL nucdif /sqdif exch Xscm def /sqend xdf /seqend sqend Xscm def /sqori xdf /seqori sqori Xscm def pop /fflbl { ftlbl () eq { false } { true } ifelse } def /p_strk true def } bdf
+ /p { S GetVar shwpos strnd (-) eq { seqend } { seqori } ifelse 0 T frs R } bdf
+%
+% Shapes......
+%
+ /HLFcrt { ScV 0 ne { 1 2 F } if } bdf
+ /PMX { 1 dict begin /svmtrix mtrx currentmatrix def } bdf
+ /PMK { svmtrix setmatrix end } bdf
+ /KCFmod { 0.25 slw scmyk S clip setcolmod R K } bdf
+ /cpt { PMX sqdif LY sc mul F m { l } repeat closepath PMK KCFmod } bdf
+ /cptc { sqdif LY sc mul F arc closepath PMK KCFmod } bdf
+ /lft { sqdif 0 T -1 1 F } bdf
+ % /cpb { fshp } bdf 
+ /no_shp { } bdf
+ /line   { PMX sqdif LY sc mul F 0 0.5 m 1 0.5 l PMK 0.5 slw scmyk K } bdf 
+ /scline { PMX sqdif LY sc mul F 0 0.5 m 1 0.5 l PMK LY sc mul slw scmyk K } bdf 
+ /box    { 1.0 0.0 1.0 1.0 0.0 1.0 3 0.0 0.0 cpt } bdf
+ /hbox   { ScV 0 ne { 1.0 0.0 1.0 1.0 0.0 1.0 3 0.0 0.0 } { 1.0 0.5 1.0 1.0 0.0 1.0 3 0.0 0.5 } ifelse cpt } bdf
+ /fcir   { PMX 0.5 0.5 0.5 0 360 cptc } bdf
+ /hcir   { PMX ScV 0 ne { 1 2 F 0.5 0.0 } { 0.5 0.5 } ifelse 0.5 0 180 cptc } bdf
+ /frhead { 0.75 0.0 0.75 -0.1 0.755 -0.1 1.0 0.5 0.755 1.1 0.75 1.1 0.75 1.0 0.0 1.0 8 0.0 0.0 cpt } bdf
+ /flhead { lft frhead } bdf
+ /hrhead { ScV 0 ne { 1.0 0.0 0.755 1.1 0.75 1.1 0.75 1.0 0.0 1.0 5 0.0 0.0 } { 1.0 0.5 0.755 1.1 0.75 1.1 0.75 1.0 0.0 1.0 5 0.0 0.5 } ifelse cpt } bdf
+ /hlhead { lft hrhead } bdf
+ /frend  { 1.0 0.0 1.0 1.0 0.0 1.0 0.0 0.995 0.25 0.5 0.0 0.005 6 0.0 0.0 cpt } bdf
+ /flend  { lft frend } bdf
+ /hrend  { ScV 0 ne { 1.0 0.0 1.0 1.0 0.0 1.0 0.0 0.995 4 0.25 0.0 } { 1.0 0.5 1.0 1.0 0.0 1.0 0.0 0.995 4 0.25 0.5 } ifelse cpt } bdf
+ /hlend  { lft hrend } bdf
+ /frsgl  { 0.75 0.0 0.75 -0.1 0.755 -0.1 1.0 0.5 0.755 1.1 0.75 1.1 0.75 1.0 0.0 1.0 0.0 0.995 0.25 0.5 0.0 0.005 11 0.0 0.0 cpt } bdf
+ /flsgl  { lft frsgl } bdf
+ /hrsgl  { ScV 0 ne { 1.0 0.0 0.755 1.1 0.75 1.1 0.75 1.0 0.0 1.0 0.0 0.995 6 0.25 0.0 } { 1.0 0.5 0.755 1.1 0.75 1.1 0.75 1.0 0.0 1.0 0.0 0.995 6 0.25 0.5 } ifelse cpt } bdf
+ /hlsgl  { lft hrsgl } bdf
+ /frtgl  { 0.0 0.0 0.0 1.0 1.0 0.505 3 1.0 0.495 cpt } bdf
+ /fltgl  { lft frtgl } bdf
+ /hrtgl  { ScV 0 ne { 0.0 0.0 0.0 1.0 2 1.0 0.0 } { 0.0 0.5 0.0 1.0 2 1.0 0.5 } ifelse cpt } bdf
+ /hltgl  { lft hrtgl } bdf
+ /fdmd   { 0.0 0.5 0.5 1.0 1.0 0.5 3 0.5 0.0 cpt } bdf
+ /hdmd   { ScV 0 ne { 1.0 0.0 0.5 1.0 2 0.0 0.0 } { 1.0 0.5 0.5 1.0 2 0.0 0.5 } ifelse cpt } bdf
+ /fdtgl  { 0.0 1.0 1.0 1.0 2 0.5 0.0 cpt } bdf
+ /f2tgl { 1.0 0.0 0.0 1.0 1.0 1.0 3 0.0 0.0 cpt } bdf
+ /fast  { scmyk 0.1 slw 0.5 0.5 T PMX 10 { -0.5 0 m 0.5 0 l 18 K rotate } repeat newpath PMK } bdf
+ /fstar { PMX 0 0.5 T 22.5 rotate 0 0 m 8 { 0.925 0 rlineto 225 rotate } repeat closepath PMK KCFmod } bdf
+%
+%
+% ......Shapes
+%
+% Group functions...
+% /ctr { S 0 T sfont scmyk dup stringwidth pop 2 div neg stringheight strnd (-) eq { 2 div } { 1.25 mul neg } ifelse m show R } bdf
+ /g_score 1.1 def % /g_score 0.5 def
+ /GpFsz { Yscl 0.25 mul dup 8 gt { pop 8 } if } def
+ /GpFont { GpFsz /Helvetica } bdf
+ /gshp { S 0 gp_st gp_nd 0 0 g_score gcmod g_shape GpV Flgrpspos grlbl p R } bdf
+ /gp_no { 4 { pop } repeat } bdf
+ /gp_ln { scmyk 0.125 slw 0 0 m grdif 0 l K } bdf
+ /gp_dt { dotted gp_ln } bdf
+ /gp_lt { longdotted  gp_ln } bdf
+ /gp_sh { shortdashed gp_ln } bdf
+ /gp_lh { longdashed  gp_ln } bdf
+ /gp_bk { scmyk 0.25 slw 1 dict begin /tl grdif 2 div def 0 0 m S 0 -1 rl K R tl 0 rl S 0 1 rl K R tl 0 rl S 0 -1 rl K R K end } bdf
+ /gp_raw { scmyk 0.25 slw strnd (-) eq { grdif 0 T -1 1 F } if 1 dict begin /tl grdif 0.05 mul def tl 0 m tl neg dup S 1 rl K R S -1 rl K R grdif 0 l S tl neg 1 rl 0 -2 rl tl 1 rl S fill R K R K end } bdf
+ /gp_law { grdif 0 T -1 1 F gp_raw } bdf
+ /CkGPL { dup GpFsz 2 div lt { pop GpFsz 0.55 mul } if } bdf
+ /gln { S colordict begin g_line cvx exec end R } bdf
+ /shgl { S grori Yscl ScV 0 eq { 0.35 mul } { 0.8 mul } ifelse T gln S grdif 2 div Yscl 0.25 mul 2 div CkGPL T strnd (-) eq { 1 -1 F } if ScV 1 eq { 1 -1 F } if Flgglbl { 0 0 0 grlbl (cv) (ch) GpFont fgcolor ttxt } if R R } bdf 
+ /GetGVar { /grlbl xdf /Flgrpspos xdf /g_line xdf /GpV xdf /g_shape xdf /gcmod xdf CKL nucdif /grdif exch Xscm def /gp_nd xdf /grend gp_nd Xscm def /gp_st xdf /grori gp_st Xscm def /Flgglbl { grlbl () eq { false } { true } ifelse } def } bdf
+ /gx { exit } bdf 
+end % shpdct
+%%EndProcSet:   objects 1.1 0
+%
+%%BeginProcSet: blocks 1.0 0
+/blckdct 60 dict def blckdct begin
+ /gst 250 string def
+ /XLL { blckori MaxTick sub } bdf
+ /XLR { blckend MaxTick add } bdf
+ /CKL { 2 { dup XLL lt { pop XLL } { dup XLR gt { pop XLR } if } ifelse exch } repeat } bdf
+% 
+% Group Functions
+ /gp { S shpdct begin GetGVar shgl gshp { currentfile token pop exec } loop end R } bdf % (Group Loop finished...) msg
+%
+% Source Functions.
+ /ScFsz { Yscl 0.75 mul dup 10 gt { pop 10 } if } def
+ /ScFont { ScFsz /Courier } bdf 
+ /sc_no { 4 { pop } repeat } bdf
+ /sc_ln { scmyk 0.25 slw 0 0 m XSPlot 0 l K } bdf
+ /sc_dt { dotted      sc_ln } bdf
+ /sc_lt { longdotted  sc_ln } bdf
+ /sc_sh { shortdashed sc_ln } bdf
+ /sc_lh { longdashed  sc_ln } bdf
+ /sln { S colordict begin s_line cvx exec end R } bdf
+ /sbc { -10 Yscl 2 mul neg XSPlot 10 add Yscl 1.5 mul bbox clip newpath } bdf % S K R
+ /sbb { S 0 0 XSPlot Yscl bbox FlgScBx { 1 slw fgcolor scmyk K } { newpath } ifelse R sbc } bdf
+ /shsll { S FLftLbl Flgslftlbl and { XLftLbl 2 div neg Yscl 2 div T strnd (-) ne { 1 -1 F } if 0 0 0 srclftlbl (cv) (ch) ScFont fgcolor ttxt } if R } bdf
+ /shsrl { S FRgtLbl Flgsrgtlbl and { XSPlot XRgtLbl 2 div add Yscl 2 div T strnd (-) ne { 1 -1 F } if 0 0 0 srcrgtlbl (cv) (ch) ScFont fgcolor ttxt } if R } bdf
+ /GetSVar { /srcrgtlbl xdf /srclftlbl xdf /s_line xdf /strnd xdf /FlgScBx xdf /spacer exch spcrsize mul def /Yscl exch tracksize mul def /ScV xdf /Flgsrgtlbl srcrgtlbl () eq { false } { true } ifelse def /Flgslftlbl srclftlbl () eq { false } { true } ifelse def strnd (.) eq { /Y Y spacer 2 div add def } { strnd (-) eq { /Y Y Yscl spacer add add def } if } ifelse } bdf
+ /source { S GetSVar XOriPlot Y T strnd (-) eq { 1 -1 F } if shsrl shsll sbb S ScV 0 eq { 0 Yscl 2 div T 1 -1 F } { ScV 1 eq { 0 Yscl T 1 -1 F } if } ifelse sln S blckori Xscm neg 0 T } bdf
+ /s_end { R R R strnd (.) eq { /Y Y Yscl add spacer 2 div add def } { strnd (+) eq { /Y Y Yscl spacer add add def } if } ifelse } bdf
+%
+% Block Functions.
+ % /tckszH tracksize 2 div def
+ /YBori TkMrkW 2 mul def
+ /GetBVar { /blcknum exch 1 sub def /blckend xdf /blckori xdf /YB YOriBlck YSBlck blcknum mul add BlckSp blcknum mul add def } bdf
+ /kbb { XOriBlck 5 sub -2 XSBlck 10 add YSBlck 2 add bbox FlgBkBx { 1 slw fgcolor scmyk K } { newpath } ifelse } bdf
+ /tm { S tmdct begin /ShowGrid xdf exec end R } bdf
+ /shwtck { YSFwd 0 gt YSFwd 0 eq YSBth 0 gt and or { /down YSFwd TkMrkW 2 mul add def } { /down 0 def } ifelse YSRvs 0 gt YSRvs 0 eq YSBth 0 gt and or { /up YSRvs TkMrkW 2 mul add def } { /up 0 def } ifelse FlgOS { blckori blckend XOriPlot 0 {s} YSFwd 0 eq { 0 } { 2 } ifelse tm blckori blckend XOriPlot YSBlck TkMrkW sub {z} YSRvs 0 eq { 0 } { 2 } ifelse tm } if is1tck FlgIS and { blckori blckend XOriPlot TkMrkW 3 mul YSFwd 0 gt { YSFwd add } { YSBth add } ifelse {r} 0 tm } if is2tck FlgIS and { blckori blckend XOriPlot TkMrkW 5 mul YSFwd add YSBth add {r} 0 tm } if } bdf
+ /ChangeStrand { FlgIS { /Y Y TkMrkW 2 mul add def } if } bdf
+ /uptck { FlgOS { blckori blckend XOriPlot 0 {s} 0 tm } if } bdf
+ /dntck { FlgOS { blckori blckend XOriPlot Y TkMrkW add {z} 0 tm } if } bdf
+ /VChangeStrand { /Y Y TkMrkW add def FlgIS { blckori blckend XOriPlot Y {r} 0 tm } if /Y Y TkMrkW add def } bdf
+ /b_end { R end } bdf
+ /vb_end { dntck R end } bdf
+end
+%%EndProcSet:   blocks 1.0 0
+%
+%%BeginProcSet: main_function_calls 1.0 0
+%
+/block { blckdct begin GetBVar S 0 YB T kbb shwtck /Y YBori def } bdf
+/vblock { blckdct begin GetBVar S 0 YB T kbb uptck /Y YBori def } bdf
+%
+%%EndProcSet:   main_function_calls 1.0 0
+%
+%%EndProlog
+%
+%%BeginSetup
+%
+% initgraphics
+% true setpacking
+true setstrokeadjust
+0.125 slw
+0 setlinejoin
+0 setlinecap
+%
+%%EndSetup
+%
+%%Page: 1 1
+%%BeginPageSetup
+%
+% Saving current page settings
+/pgsave save def
+% Setting BGcolor for sheet 
+Dpage flglscape { exch } if 0 0 bbox S bgcolor scmyk fill R clip newpath
+% setting coordinate axes for page orientation
+flglscape
+ { 90 rotate 1 -1 F XORI YORI T }                  % (0,0) - Ori for landscape pages
+ { XORI Dpage exch pop YORI sub T 1 -1 F } ifelse  % (0,0) - Ori for portrait pages
+%
+% Printing Header
+headerdict begin
+ /PageNumber (Page 1 of 1) def
+ FlgTitl { Header } if
+end
+%
+%%EndPageSetup
+%
+%
+% Block Num: 1 Page: 1
+%
+0 5000 1 block
+% ------------------ Strand(+) Begin
+0 1 0.25 false (+) (red sc_ln) (Example) (ANNOT) source
+150 1800 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_bk) false (bio gene) gp
+8 150 500 (.) (.) 1.00 (lightskyblue 1) (fgcolor frend) 0 false (5'utr) p
+8 1250 1800 (.) (.) 1.00 (lightskyblue 1) (fgcolor frhead) 0 false (3'utr) p
+5 300 500 0 0 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 750 1000 0 1 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 1250 1550 1 0 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+gx
+3000 4900 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_bk) false (faq gene) gp
+8 3000 3400 (.) (.) 1.00 (lightskyblue 1) (fgcolor frend) 0 false (5'utr) p
+8 4570 4900 (.) (.) 1.00 (lightskyblue 1) (fgcolor frhead) 0 false (3'utr) p
+5 3350 3400 0 0 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 3475 3525 0 0 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 3600 3800 0 0 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 3900 3975 0 2 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 4100 4200 2 0 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 4350 4400 0 0 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 4570 4725 0 0 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+gx
+s_end
+0 1 0.25 false (+) (red sc_ln) (Example) (DBM) source
+175 1700 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_bk) false (K-Bio) gp
+5 175 875 (.) (.) 0.30 (violet 1) (darkblue box) 0 false (similarity) p
+5 200 1150 (.) (.) 0.49 (violet 1) (darkblue box) 0 false (similarity) p
+5 225 650 (.) (.) 0.86 (violet 1) (darkblue box) 0 false (similarity) p
+5 900 1300 (.) (.) 0.86 (violet 1) (darkblue box) 0 false (similarity) p
+5 1400 1700 (.) (.) 0.27 (violet 1) (darkblue box) 0 false (similarity) p
+gx
+3058 4875 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_bk) false (RN_faq.1a) gp
+5 3058 3418 (.) (.) 0.96 (violet 1) (darkblue box) 0 false (similarity) p
+5 3083 3230 (.) (.) 0.28 (violet 1) (darkblue box) 0 false (similarity) p
+5 3375 3520 (.) (.) 0.28 (violet 1) (darkblue box) 0 false (similarity) p
+5 3600 3750 (.) (.) 0.63 (violet 1) (darkblue box) 0 false (similarity) p
+5 3950 4350 (.) (.) 0.63 (violet 1) (darkblue box) 0 false (similarity) p
+5 4570 4875 (.) (.) 0.64 (violet 1) (darkblue box) 0 false (similarity) p
+gx
+s_end
+0 1 0.25 false (+) (red sc_ln) (Example) (SCAN) source
+300 1550 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_bk) false (Human BIO) gp
+10 300 1550 (.) (.) 0.64 (darkseagreen 1) (darkseagreen scline) 0 false (gene) p
+5 300 380 0 0 0.69 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 450 550 0 1 0.78 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 650 780 1 2 0.78 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 910 1055 2 0 0.69 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 1350 1550 0 0 0.60 (lightyellow 5) (fgcolor box) 0 false (cds) p
+0 300 302 (.) (.) 1.00 (blue 1) (blue hcir) 0 false (start) p
+0 1548 1550 (.) (.) 1.00 (red 1) (red hcir) 0 false (stop) p
+gx
+3350 4250 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_bk) false (pfam faq_rqst) gp
+10 3350 4250 (.) (.) 0.60 (darkseagreen 1) (darkseagreen scline) 0 false (gene) p
+5 3350 3425 0 2 0.69 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 3500 3575 2 1 0.42 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 3650 3725 1 0 0.70 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 3760 3790 0 2 0.60 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 3850 4000 2 1 0.88 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 4100 4250 1 0 0.78 (lightyellow 5) (fgcolor box) 0 false (cds) p
+0 3350 3352 (.) (.) 1.00 (blue 1) (blue hcir) 0 false (start) p
+0 4248 4250 (.) (.) 1.00 (red 1) (red hcir) 0 false (stop) p
+gx
+s_end
+0 1 0.25 false (+) (red sc_ln) (Example) (SCAN) source
+3650 4250 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_bk) false (+ overlapping) gp
+10 3650 4250 (.) (.) 0.60 (darkseagreen 1) (darkseagreen scline) 0 false (gene) p
+5 3650 3725 1 0 0.70 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 3730 3775 0 2 0.60 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 3850 4000 2 1 0.88 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 4100 4250 1 0 0.78 (lightyellow 5) (fgcolor box) 0 false (cds) p
+0 3650 3652 (.) (.) 1.00 (blue 1) (blue hcir) 0 false (start) p
+0 4248 4250 (.) (.) 1.00 (red 1) (red hcir) 0 false (stop) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+49 340 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 49 340 (.) (.) 0.23 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+697 1465 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 697 1465 (.) (.) 0.45 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+1747 2222 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 1747 2222 (.) (.) 0.46 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+2600 2897 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 2600 2897 (.) (.) 0.81 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+3340 3453 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 3340 3453 (.) (.) 1.00 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+3929 4644 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 3929 4644 (.) (.) 0.65 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+119 298 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 119 298 (.) (.) 0.38 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+896 1466 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 896 1466 (.) (.) 0.12 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+2056 2612 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 2056 2612 (.) (.) 0.34 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+2917 3488 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 2917 3488 (.) (.) 0.24 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+4401 5151 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 4401 5151 (.) (.) 0.61 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+940 1584 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 940 1584 (.) (.) 0.39 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+2232 2692 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 2232 2692 (.) (.) 0.57 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+3419 3935 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 3419 3935 (.) (.) 0.17 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+4600 4719 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 4600 4719 (.) (.) 0.45 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+1030 1960 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 1030 1960 (.) (.) 0.19 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+2352 3169 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 2352 3169 (.) (.) 0.40 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+4723 4833 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 4723 4833 (.) (.) 0.18 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+2666 3046 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 2666 3046 (.) (.) 0.18 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+2742 3188 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 2742 3188 (.) (.) 0.53 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+2828 3571 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 2828 3571 (.) (.) 0.89 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+% ------------------ Strand(+) End
+ChangeStrand
+% ------------------ Strand(.) End
+% ------------------ Strand(-) End
+b_end
+%
+% Block Num: 2 Page: 1
+%
+5000 10000 2 block
+% ------------------ Strand(+) Begin
+0 1 0.25 false (+) (red sc_ln) (Example) (ANNOT) source
+7200 9000 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_bk) false (how gene) gp
+8 7200 7500 (.) (.) 1.00 (lightskyblue 1) (fgcolor frend) 0 false (5'utr) p
+8 8800 9000 (.) (.) 1.00 (lightskyblue 1) (fgcolor frhead) 0 false (3'utr) p
+5 7400 7500 0 1 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 7800 7925 1 1 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 8250 8400 1 0 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 8500 8650 0 2 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+5 8800 8855 2 0 1.00 (darkyellow 5) (fgcolor box) 0 false (exon) p
+gx
+s_end
+0 1 0.25 false (+) (red sc_ln) (Example) (DBM) source
+7150 9050 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_bk) false (HOW_x_ESTs) gp
+5 7150 7550 (.) (.) 0.65 (lightlimegreen 1) (fgcolor hrend) 0 false (5'est) p
+5 7300 7670 (.) (.) 0.65 (lightlimegreen 1) (fgcolor hrend) 0 false (5'est) p
+5 8500 8900 (.) (.) 0.99 (lightlimegreen 1) (fgcolor hrhead) 0 false (3'est) p
+5 8825 9050 (.) (.) 0.33 (lightlimegreen 1) (fgcolor hrhead) 0 false (3'est) p
+gx
+s_end
+0 1 0.25 false (+) (red sc_ln) (Example) (SCAN) source
+7625 9225 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_bk) false (TO-related) gp
+10 7625 9225 (.) (.) 0.57 (darkseagreen 1) (darkseagreen scline) 0 false (gene) p
+5 7625 7900 0 0 0.69 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 8125 8350 0 2 0.55 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 8500 8650 2 1 0.87 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 8800 9025 1 0 0.73 (lightyellow 5) (fgcolor box) 0 false (cds) p
+5 9100 9225 0 0 0.51 (lightyellow 5) (fgcolor box) 0 false (cds) p
+0 7625 7627 (.) (.) 1.00 (blue 1) (blue hcir) 0 false (start) p
+0 9223 9225 (.) (.) 1.00 (red 1) (red hcir) 0 false (stop) p
+gx
+s_end
+0 1 0.25 false (+) (red sc_ln) (Example) (SCAN) source
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+5152 5596 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 5152 5596 (.) (.) 0.17 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+5960 6610 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 5960 6610 (.) (.) 0.70 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+6919 7409 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 6919 7409 (.) (.) 0.75 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+7685 8193 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 7685 8193 (.) (.) 0.55 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+8649 9277 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 8649 9277 (.) (.) 0.25 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+4401 5151 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 4401 5151 (.) (.) 0.61 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+5737 6128 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 5737 6128 (.) (.) 0.95 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+6563 7401 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 6563 7401 (.) (.) 0.89 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+8228 8713 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 8228 8713 (.) (.) 1.00 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+5302 5765 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 5302 5765 (.) (.) 0.74 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+6071 6613 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 6071 6613 (.) (.) 0.38 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+7205 7827 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 7205 7827 (.) (.) 0.23 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+8683 9171 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 8683 9171 (.) (.) 0.73 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+5398 6220 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 5398 6220 (.) (.) 0.37 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+6730 7142 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 6730 7142 (.) (.) 0.35 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+7482 7924 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 7482 7924 (.) (.) 0.52 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+5792 6153 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 5792 6153 (.) (.) 0.80 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+6765 7693 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 6765 7693 (.) (.) 0.46 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+7644 7943 (fgcolor 1) (fgcolor no_shp) 0 (fgcolor gp_no) false () gp
+5 7644 7943 (.) (.) 1.00 (fgcolor 4) (fgcolor fcir) 0 false (pred_exon) p
+gx
+s_end
+0 0.5 0 false (+) (red sc_ln) (Example) (EXP) source
+s_end
+% ------------------ Strand(+) End
+ChangeStrand
+% ------------------ Strand(.) End
+% ------------------ Strand(-) End
+b_end
+%
+flgcrd { s_credits } if
+grestoreall
+pgsave restore
+showpage
+%
+% PageEND: 1 1
+%
+%%Trailer
+%
+%%Pages: 1
+%%Orientation: Portrait
+%%BoundingBox: 0 0 595 842
+%%EOF
+@
+
+
+1.1
+log
+@Checkin forced...
+@
+text
+@d19 1
+a19 1
+%    $Id: gff2ps,v 1.35 1999/09/08 20:46:10 jabril Exp jabril $
+d350 1
+a350 1
+/s_credits { S 1 dict begin /fs_cd FSF CSF def pglim FSF 0.52 mul CSF sub T 1 -1 F 0 0 0 (This plot has been obtained using gff2ps. The most recent version of gff2ps is freely available at \042http:\/\/www1.imim.es/\176jabril/\042. Copyright      1999 by Josep F. Abril & Roderic Guigo) (cv) (rh) fs_cd /Times-Roman fgcolor ttxt S fs_cd /Times-Roman sfont (   1999 by Josep F. Abril & Roderic Guigo) stringwidth pop neg R 0 0 (\343) (cv) (ch) fs_cd /Symbol fgcolor ttxt end R } bdf
+@

@@ -1,0 +1,103 @@
+########################################
+##                                    ##
+##    EXTRA CUSTOM FILE FOR GFF2PS    ##
+##                                    ##
+##        Filename: 2bx1p.rc          ##
+##                                    ##
+########################################
+##
+## User Name: jabril
+##   Created: 1999/12/13
+##
+# L ######PAGE LAYOUT & PROGRAM OPTIONS######
+#
+page_number=1
+blocks_x_page=2
+show_inner_scale=off
+page_orientation=Portrait
+margin_upper=1cm
+margin_lower=1cm
+margin_left=1cm
+margin_right=0.5cm
+foreground_color=FGcolor
+background_color=verylightcyan
+right_source_label_width=2.5cm
+left_source_label_width=2.5cm
+show_right_source_label=true
+show_left_source_label=false
+header_style=boxed
+show_time=off
+show_date=off
+zoom=0..10000
+strand_show_forward=on
+strand_show_independent=off
+strand_show_reverse=off
+#
+# F ############GENOMIC FEATURES############
+#
+*::layer=5
+gene::feature_color=darkseagreen
+gene::feature_stroke_color=darkseagreen
+gene::shape=weighted_line                     ###        
+gene::layer=10
+# pred_exon::feature_color=lightseagreen
+# pred_exon::feature_stroke_color=red
+pred_exon::fill_shape_mode=rainbow
+pred_exon::shape=circle
+exon::feature_color=darkyellow
+exon::shape=box
+cds::feature_color=lightyellow
+cds::shape=box                       ###          
+start::feature_color=blue
+start::feature_stroke_color=blue
+start::shape=half_circle
+start::layer=0
+3'est::feature_color=lightlimegreen
+3'utr::feature_color=lightskyblue
+3'est::shape=half_arrow_head
+3'utr::shape=arrow_head            
+3'utr::layer=8
+5'est::feature_color=lightlimegreen
+5'est::shape=half_arrow_end
+5'utr::feature_color=lightskyblue
+5'utr::shape=arrow_end            
+5'utr::layer=8
+stop::feature_color=red
+stop::shape=half_circle
+stop::feature_stroke_color=red
+stop::layer=0
+similarity::feature_color=violet
+similarity::feature_stroke_color=darkblue   
+similarity::shape=box
+g+c::feature_color=violet..green..white
+g+c::fill_vector_mode=3_color
+fourier::fill_vector_mode=default
+#
+# G ############GROUP FEATURES############
+#
+*::group_line=bracket
+ADHGeneID_Fou.Fourier::label=++none++
+ADHGeneID_G+C.G+C::label=++none++
+ADHGeneID_Fou.Fourier::group_line=none
+ADHGeneID_G+C.G+C::group_line=none
+#
+# S ############SOURCE FEATURES############
+#
+DNA_Scan::right_label=SCAN
+DNA_Scan::left_label=++default++
+Experimental::right_label=ANNOT
+Experimental::left_label=++default++
+Genomic_Explorer::right_label=EXP
+Genomic_Explorer::left_label=++default++
+Genomic_Explorer::track_spacing_scale=0
+Genomic_Explorer::track_scale=0.5
+DB-Match::right_label=DBM
+DB-Match::left_label=++default++
+GeneID_Fou::right_label=Fourier
+GeneID_Fou::left_label=++default++
+GeneID_G+C::right_label=G+C
+GeneID_G+C::left_label=++default++
+#
+*::unfold_grouped_ungrouped=off
+*::unfold_grouped_line=on
+*::unfold_ungrouped_line=on

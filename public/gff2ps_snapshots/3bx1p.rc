@@ -1,0 +1,92 @@
+########################################
+##                                    ##
+##    EXTRA CUSTOM FILE FOR GFF2PS    ##
+##                                    ##
+##        Filename: 3bx1p.rc          ##
+##                                    ##
+########################################
+##
+## User Name: jabril
+##   Created: 1999/12/13
+##
+# L ######PAGE LAYOUT & PROGRAM OPTIONS######
+#
+page_number=1
+blocks_x_page=3
+show_inner_scale=off
+page_orientation=Portrait
+margin_upper=1cm
+margin_lower=1cm
+margin_left=0.5cm
+margin_right=1cm
+foreground_color=FGcolor
+background_color=verylightorange
+right_source_label_width=2cm
+left_source_label_width=2.5cm
+show_right_source_label=false
+show_left_source_label=true
+header_style=none
+zoom=-1000..11000
+#
+# F ############GENOMIC FEATURES############
+#
+gene::feature_color=darkseagreen
+gene::feature_stroke_color=seagreen
+gene::shape=line                     ###        
+pred_exon::feature_color=lightmagenta
+pred_exon::shape=box
+exon::feature_color=darkyellow
+exon::shape=box
+cds::feature_color=lightyellow
+cds::shape=box                       ###          
+start::feature_color=blue
+start::shape=diamond
+start::feature_stroke_color=blue
+3'est::feature_color=lightlimegreen
+3'est::shape=half_arrow_head
+3'utr::feature_color=lightskyblue
+3'utr::shape=arrow_head            
+5'est::feature_color=lightlimegreen
+5'est::shape=half_arrow_end
+5'utr::feature_color=lightskyblue
+5'utr::shape=arrow_end            
+stop::feature_color=red
+stop::shape=diamond
+stop::feature_stroke_color=red
+similarity::feature_color=violet
+similarity::shape=circle
+similarity::feature_stroke_color=violet   
+g+c::feature_color=violet..green..white
+g+c::fill_vector_mode=3_color
+fourier::fill_vector_mode=default
+#
+# G ############GROUP FEATURES############
+#
+ADHGeneID_Fou.Fourier::label=++none++
+ADHGeneID_G+C.G+C::label=++none++
+ADHGeneID_Fou.Fourier::group_line=none
+ADHGeneID_G+C.G+C::group_line=none
+#
+# S ############SOURCE FEATURES############
+#
+DNA_Scan::left_label=SCAN
+DNA_Scan::right_label=++default++
+Experimental::left_label=ANNOT
+Experimental::right_label=++default++
+Genomic_Explorer::left_label=EXP
+Genomic_Explorer::right_label=++default++
+DB-Match::left_label=DBM
+DB-Match::right_label=++default++
+GeneID_Fou::left_label=Fourier
+GeneID_Fou::right_label=++default++
+GeneID_G+C::left_label=G+C
+GeneID_G+C::right_label=++default++
+
+
+
+
+
+
+
+
+

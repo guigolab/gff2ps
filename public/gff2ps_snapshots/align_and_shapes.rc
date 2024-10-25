@@ -1,0 +1,85 @@
+########################################
+##                                    ##
+##    EXTRA CUSTOM FILE FOR GFF2PS    ##
+##                                    ##
+##   Filename:  align_and_shapes.rc   ##
+##                                    ##
+########################################
+##
+## User Name: jabril
+##   Created: 1999/12/13
+##
+
+#####PAGE LAYOUT & PROGRAM OPTIONS######  
+# L #
+#
+major_tickmarks_nucleotides=500
+show_positions=true
+zoom=*..5900
+
+###########GENOMIC FEATURES############
+# F #
+#
+shp01::shape=none
+shp02::shape=line
+shp03::shape=weighted_line
+shp04::shape=circle
+shp05::shape=half_circle
+shp06::shape=box
+shp07::shape=diamond
+shp08::shape=up_triangle
+shp09::shape=down_triangle
+shp10::shape=left_triangle
+shp11::shape=half_left_triangle
+shp12::shape=half_right_triangle
+shp13::shape=right_triangle
+shp14::shape=left_arrow_head
+shp15::shape=half_left_arrow_head
+shp16::shape=half_arrow_head
+shp17::shape=arrow_head
+shp18::shape=left_arrow_end
+shp19::shape=half_left_arrow_end
+shp20::shape=half_arrow_end
+shp21::shape=arrow_end
+shp22::shape=left_arrow
+shp23::shape=half_left_arrow
+shp24::shape=half_arrow
+shp25::shape=arrow
+shp26::shape=sand_clock
+shp27::shape=asterisk
+shp28::shape=star
+shp29::shape=none
+# shp29::shape=half_star
+# shp30::shape=none
+#
+*::fill_shape_mode=1_color
+
+###########GROUP FEATURES#############
+# G #
+#
+/.*ONE.*/::group_line=line
+/.*ONE.*/::group_line_color=darkred
+/.*TWO.*/::group_line=bracket
+/.*TWO.*/::group_line_color=darkblue
+/.*THREE.*/::group_line=arrow
+/.*THREE.*/::group_line_color=darkgreen
+
+###########SOURCE FEATURES############
+# S #
+#
+TOP::vert_align=reverse
+CENTER::vert_align=center
+MIRROR::vert_align=mirror
+BOTTOM::vert_align=baseline
+#
+TOP::left_label=TOP
+CENTER::left_label=CENTER
+MIRROR::left_label=MIRROR
+BOTTOM::left_label=BOTTOM
+#
+TOP::feature_color=limegreen
+CENTER::feature_color=cyan
+MIRROR::feature_color=violet
+BOTTOM::feature_color=orange
+# 
+*::source_style=boxed

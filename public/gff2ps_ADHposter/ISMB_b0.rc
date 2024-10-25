@@ -1,0 +1,247 @@
+## 
+## ISMB.rc
+##
+## This is the gff2ps configuration file 
+## for the ISMB99 ADH poster:
+## "The challenge of annotating a complete eukaryotic genome"
+##
+## $Id: ISMB.rc,v 1.1 2000/01/10 21:31:58 jabril Exp jabril $
+#
+# L ######PAGE LAYOUT & PROGRAM OPTIONS######
+#
+margin_upper=2cm
+margin_bottom=2cm
+margin_right=2cm
+margin_left=2cm
+background_color=white
+foreground_color=black
+#
+# We must define this zoom because there is one GFF-record
+# starting at -1 (???), which moves nucleotide origin to -100 on axes.
+zoom=0..*
+#
+block_style=default
+show_blocks_top-bottom=1
+default_block_spacing_width=0.25cm
+default_track_width=1cm
+default_track_spacing_width=0.25cm
+strand_show_forward=on
+strand_show_independent=on
+strand_show_reverse=on
+default_scale_width=0.25cm
+major_tickmarks_nucleotides=25000
+# major_tickmarks_num=10
+# minor_tickmarks_nucleotides=-1
+minor_tickmarks_num=25
+show_positions=false
+#
+# frame0_color=blue
+# frame1_color=red
+# frame2_color=green
+# frame_unknown_color=orange
+#
+header_style=boxed
+title=The Challenge of Annotating a Complete Eukaryotic Genome
+subtitle=A case of study in Drosophila melanogaster: 2.9 Mb from Adh region on chromosome 3.
+show_page_numbers=on
+show_time=off
+show_date=off
+#
+left_source_label_width=4cm
+#
+#
+# G ############GROUP FEATURES############
+#
+# For All Groups
+!/.*ID_(Fou|G\+C).*/::group_shape=line
+*::group_line=bracket
+#
+/.*std.*/::group_line_color=black
+#
+############### A
+#
+/.*GeneWise.*/::group_line_color=darkskyblue
+/.*GeneMarkHMM.*/::group_line_color=seagreen
+/.*MAGPIE.*/::group_line_color=violet
+/.*GeneID.*/::group_line_color=darkorange
+/.*BLOCKS.*/::group_line_color=darkgreen
+/.*HMMGene.*/::group_line_color=darkred
+/.*grailexp.*/::group_line_color=brown
+/.*Genie.*/::group_line_color=magenta
+/.*FGenes.*/::group_line_color=limegreen
+#
+############### B
+#
+/.*MAGPIEProm.*/::group_line_color=darkcyan
+/.*LME.*/::group_line_color=darkcyan
+/.*GenieProm.*/::group_line_color=darkcyan
+/.*CoreInspector.*/::group_line_color=darkcyan
+#
+############### C
+#
+/.*TRF.*/::group_line_color=blue
+/.*Calypso.*/::group_line_color=blue
+#
+#
+# S ############SOURCE FEATURES############
+#
+# Data-Sets for Adh region from BDGP
+std1::left_label=ADH - Std1
+std3::left_label=ADH - Std3
+/std.*/::group_color=grey
+/std.*/::feature_color=yellow
+/std.*/::source_line_color=black
+# 
+# Whole Sequence Analysis.
+GeneID_Fou::left_label=Fourier Analysis
+GeneID_Fou::source_line=none
+GeneID_G+C::left_label=G+C Content
+GeneID_G+C::source_line=none
+#
+############### A
+#
+# Birney - GeneWise
+GeneWise::left_label=GeneWise
+GeneWise::feature_color=lightskyblue
+GeneWise::group_color=darkskyblue
+GeneWise::source_line_color=darkskyblue
+#
+# Borodovsky - GeneMark.hmm
+GeneMarkHMM::left_label=GeneMark HMM
+GeneMarkHMM::feature_color=lightseagreen
+GeneMarkHMM::group_color=seagreen
+GeneMarkHMM::source_line_color=seagreen
+#
+# Gaasterland - MAGPIE, repeats & promoters
+MAGPIE::left_label=MAGPIE
+MAGPIEexon::left_label=MAGPIE (Exons)
+/MAGPIE(exon)?/::feature_color=lightviolet
+/MAGPIE(exon)?/::group_color=violet
+/MAGPIE(exon)?/::source_line_color=violet
+#
+# Guigo - GeneID
+GeneID::left_label=GeneID
+GeneID::feature_color=lightorange
+GeneID::group_color=darkorange
+GeneID::source_line_color=darkorange
+#
+# Henikoff - BLOCKS
+BLOCKS::left_label=BLOCKS
+BLOCKS::feature_color=lightgreen
+BLOCKS::group_color=darkgreen
+BLOCKS::source_line_color=darkgreen
+#
+# Krogh - HMMGene
+HMMGene::left_label=HMMGene
+HMMGene::feature_color=verylightred
+HMMGene::group_color=darkred
+HMMGene::source_line_color=darkred
+#
+# Mural - GRAIL
+grailexp::left_label=GRAIL
+grailexp::feature_color=verylightbrown
+grailexp::group_color=brown
+grailexp::source_line_color=brown
+#
+# Reese - Genie, GenieEST and GenieESTHOM
+Genie::left_label=Genie
+GenieEST::left_label=Genie+EST
+GenieESTHOM::left_label=Genie+EST+HOM
+/Genie(EST(HOM)?)?/::feature_color=verylightmagenta
+/Genie(EST(HOM)?)?/::group_color=magenta
+/Genie(EST(HOM)?)?/::source_line_color=magenta
+#
+# Solovyev - CGG1, CGG2C and GG3
+FGenesCGG1::left_label=FGenes (CGG1)
+FGenesCGG2::left_label=FGenes (CGG2)
+FGenesCGG3::left_label=FGenes (CGG3)
+/FGenes.*/::feature_color=lightlimegreen
+/FGenes.*/::group_color=limegreen
+/FGenes.*/::source_line_color=limegreen
+#
+############### B
+#
+# Gaasterland - MAGPIE, repeats & promoters
+MAGPIEProm::left_label=MAGPIE-Promoters
+MAGPIEProm::feature_color=lightcyan
+MAGPIEProm::group_color=darkcyan
+MAGPIEProm::source_line_color=darkcyan
+MAGPIEProm::vert_align=baseline
+#
+# Reese - Genie, GenieEST and GenieESTHOM
+GenieProm::left_label=Genie-Promoters
+GenieProm::feature_color=lightcyan
+GenieProm::group_color=darkcyan
+GenieProm::source_line_color=darkcyan
+GenieProm::vert_align=baseline
+#
+# Ohler - LME_IMC and LME_SSM
+LMEIMC::left_label=LME-IMC TSS
+LMESSM::left_label=LME-SSM TSS
+/LME.*/::feature_color=lightcyan
+/LME.*/::group_color=darkcyan
+/LME.*/::source_line_color=darkcyan
+/LME.*/::vert_align=baseline
+#
+# Werner - CoreInspector
+CoreInspector::left_label=CoreInspector TSS
+CoreInspector::feature_color=lightcyan
+CoreInspector::group_color=darkcyan
+CoreInspector::source_line_color=darkcyan
+CoreInspector::vert_align=baseline
+#
+############### C
+#
+# Gaasterland - MAGPIE, repeats & promoters
+calypso::left_label=MAGPIE (Calypso)
+calypso::feature_color=lightblue
+calypso::group_color=blue
+calypso::source_line_color=blue
+calypso::vert_align=center
+#
+# Benson - TandemRepeatFinder
+TRF::left_label=TandemRepeatFinder
+TRF::feature_color=lightblue
+TRF::group_color=blue
+TRF::source_line_color=blue
+TRF::vert_align=center
+#
+############### #
+#
+# For All Sources
+*::unfold_grouped_ungrouped=off
+*::unfold_grouped_line=off
+*::unfold_ungrouped_line=off
+#
+# F ############GENOMIC FEATURES############
+#
+############### A
+#
+start_codon::shape=right_triangle
+start_codon::layer=20
+CDS::shape=box
+CDS::layer=5
+splice3::shape=up_triangle
+splice3::layer=20
+exon::shape=box
+exon::layer=16
+splice5::shape=down_triangle
+splice5::layer=20
+stop_codon::shape=circle
+stop_codon::layer=20
+#
+############### B
+#
+promotor::shape=half_circle
+TSS::shape=half_diamond
+#
+############### C
+#
+tandemrepeat::shape=circle
+tandem_repeat::shape=circle
+#
+############### #
+#
+# For All Features
+*::fill_shape_mode=1_color
+*::fill_vector_mode=rainbow
